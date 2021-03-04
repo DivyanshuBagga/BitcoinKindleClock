@@ -23,11 +23,9 @@ The following steps assume you hace an Amazon Linux EC2 instance.
 3. Create a IAM EC2 role which has full access to S3. Assign the role to your EC2 instance containing update.py.
 4. Run sudo crontab -e on EC2. Enter the insert mode by pressing 'i', and paste the following:
 ```shell
-{
 SHELL=/bin/bash
 PATH=/bin:/usr/bin:/usr/local/bin
 */10 * * * * /home/ec2-user/Bitcoin/cron.sh >> /home/ec2-user/Bitcoin/cron.log 2>&1
-}
 ```
 Quit by pressing 'Esc', followed by 'wq'. Now your cron job is set to generate display.png, in the S3 bucket, every 10 minutes.
 
