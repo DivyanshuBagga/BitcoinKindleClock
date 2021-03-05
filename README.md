@@ -18,10 +18,11 @@ We will Configure kindle exactly as described in [kindle-display](https://github
 # Configure Server
 The following steps assume you hace an Amazon Linux EC2 instance.
 
-1. Copy update.py and cron.sh from the github repository to EC2 machine.
-2. Create an S3 bucket, with policy which enables public access.
-3. Create a IAM EC2 role which has full access to S3. Assign the role to your EC2 instance containing update.py.
-4. Run sudo crontab -e on EC2. Enter the insert mode by pressing 'i', and paste the following:
+1. Copy server folder and cron.sh from the github repository to EC2 machine. Make sure cron.sh is in the parent folder of server folder.
+2. Update path in cron.sh. 
+3. Create an S3 bucket, with policy which enables public access.
+4. Create a IAM EC2 role which has full access to S3. Assign the role to your EC2 instance containing update.py.
+5. Run sudo crontab -e on EC2. Enter the insert mode by pressing 'i', and paste the following:
 ```shell
 SHELL=/bin/bash
 PATH=/bin:/usr/bin:/usr/local/bin
